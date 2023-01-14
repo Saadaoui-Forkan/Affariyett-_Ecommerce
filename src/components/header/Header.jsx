@@ -22,7 +22,7 @@ function Header() {
   }
 
   return (
-    <div>
+    <div className='header'>
       <HeaderTop 
         form = { form }
         handleShowSearchInput = { handleShowSearchInput }

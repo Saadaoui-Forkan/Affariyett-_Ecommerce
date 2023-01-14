@@ -1,0 +1,42 @@
+.banner {
+    margin: auto;
+    background-color: var(--main-color);
+}
+.banner-container{
+    max-width: 80%;
+    padding: 40px ;
+    margin: 10px auto;
+}
+.banner-img {
+    width: 100%;
+    margin: auto;
+}
+.slick-dots {
+    bottom: 2px;
+}
+.slick-dots li button:before {
+    font-size: 10px;
+    color: var(--light-red-color);
+    opacity: 1;
+}
+/* .slick-slide img {
+    margin: auto;
+    width: 50%;
+    height: 50%;
+} */
+
+/* responsive */
+/* @media (max-width:992px){
+    
+} */
+
+@media (max-width:768px){
+    .banner {
+        margin: 105px auto;
+        background-color: var(--main-color);
+    }
+}
+
+@media (min-width:320px) and (max-width:575px) {
+    
+}

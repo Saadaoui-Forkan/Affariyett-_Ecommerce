@@ -167,7 +167,7 @@
     }
     .icon {
         display: block;
-        position: absolute;
+        position: fixed;
         top: 55px;
         left: 0px;
         font-size: 25px;
@@ -178,7 +178,7 @@
         transition: left 0.3s ease-in-out;
     }
     .toggle-icon {
-        left: 34vw;
+        left: 35vw;
         z-index: 10;
     }
     .navbar {
@@ -187,6 +187,8 @@
         align-items: flex-start;
         justify-content: flex-start;
         border: none;
+        position: absolute;
+        z-index: 50;
     }
     .navbar-links {
         flex-direction: column;
@@ -196,8 +198,8 @@
         transform: translateX(-350px);
         transition: transform 0.3s ease-in-out;
     }
-    .active-navbar{
-        transform: translateY(55px)
+    .active-navbar {
+        transform: translateY(-50px);
     }
     .navbar-link {
         margin: auto 20px;
@@ -232,18 +234,18 @@
         padding: 5px;
     }
     .active-navbar {
-        transform: translateY(52px);
-        width: 52vw;
+        transform: translateY(-53px);
+        width: 50vw;
     }
     .navbar-link {
         font-size: 17px;
     }
     .toggle-icon {
         z-index: 10;
-        top: 51px;
         font-size: 20px;
-        left: 42vw;
         padding: 4px;
+        top: -48px;
+        left: 50vw;
     }
     .icon {
         top: 52px;
