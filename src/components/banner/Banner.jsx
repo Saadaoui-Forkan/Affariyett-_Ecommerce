@@ -24,22 +24,28 @@ function Banner() {
 
   const settings = {
     dots: true,
-    autoplay: true,
-    autoplaySpeed: 3000,
+    lazyLoad: true,
     infinite: true,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    initialSlide: 0,
-    speed: 500,
-    arrows: false,
+    initialSlide: 2,
     adaptiveHeight: true,
-    centerMode: true,
+    autoplay: true,
+    arrows: false,
+    autoplaySpeed: 2000,
+    cssEase: "linear"
   };
 
   return (
     <div className="banner">
-      
-        <Slider {...settings} >
+      <div className="banner-title">
+        <p>Free delivery from 70 $</p>
+        <p>A question ? contact our Customer Service at:</p>
+        <p>12 345 678</p>
+      </div>
+      <div className="slider">
+      <Slider {...settings} >
         {
           bannerImgs.map(banner => (
             
@@ -50,7 +56,7 @@ function Banner() {
           ))
         }
         </Slider>
-
+      </div>
     </div>
   )
 }

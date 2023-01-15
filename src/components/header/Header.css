@@ -199,7 +199,7 @@
         transition: transform 0.3s ease-in-out;
     }
     .active-navbar {
-        transform: translateY(-50px);
+        transform: translateY(5px);
     }
     .navbar-link {
         margin: auto 20px;
@@ -234,7 +234,7 @@
         padding: 5px;
     }
     .active-navbar {
-        transform: translateY(-53px);
+        /* transform: translateY(-53px); */
         width: 50vw;
     }
     .navbar-link {
