@@ -1,0 +1,154 @@
+.special-offers-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.offer {
+    width: 45%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--white-color);
+    border-radius: 10px;
+    position: relative;
+    padding: 5px;
+    box-shadow: 1px 0px 10px 4px rgb(88 88 88 / 75%);
+    margin: 10px 25px;
+}
+
+.offer-image-wrapper {
+    width: 40%;
+    height: 100%;
+}
+
+.offer-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.offer-info {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 60%;
+}
+
+.offer-title {
+    color: var(--primary-color);
+    font-size: 25px;
+    margin: 15px 0;
+    font-family: 'Sofia Sans Extra Condensed';
+}
+
+.offer-price {
+    margin: 10px 0;
+}
+
+.offer-price-item {
+    font-size: 21px;
+    color: var(--strong-red-color);
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+
+.offer-final-price-item {
+    font-size: 21px;
+    color: var(--primary-color);
+}
+.offer-discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: var(--white-color);
+    font-weight: 600;
+    font-size: 24px;
+    background-color: var(--strong-red-color);
+    border-radius: 50px;
+    padding: 5px 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.offer-see-more {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--white-color);
+    background-color: var(--info-color);
+    padding: 5px 10px;
+    border-radius: 2px 15px;
+    margin-top: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* responsive */
+@media (max-width:992px){
+    .offer {
+        width: 44%;
+        margin: 10px 20px 10px 20px;
+    }
+}
+
+@media (max-width:768px){
+    .offer {
+        width: 70%;
+        margin: 20px auto;
+    }
+}
+
+@media (min-width:320px) and (max-width:575px) {
+    .offer {
+        width: 80%;
+        margin: 10px auto;
+    }
+    .offer-image-wrapper {
+        width: 50%;
+    }
+    .offer-info {
+        padding: 5px;
+        width: 50%;
+    }
+    .offer-title {
+        font-size: 22px;
+        margin: 12px 0;
+    }
+    .rating-wrapper {
+        margin: 6px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .rating-wrapper .rating {
+        padding: 2px;
+        border-radius: 7px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+    .rating-wrapper span {
+        font-size: 12px;
+    }
+    .offer-price {
+        margin: 10px 0;
+    }
+    .offer-price-item {
+        font-size: 20px;
+    }
+    .offer-final-price-item {
+        font-size: 20px;
+    }
+    .offer-see-more {
+        font-size: 17px;
+        margin-top: 5px;
+    }
+    .offer-discount {
+        font-size: 20px;
+    }  
+}
