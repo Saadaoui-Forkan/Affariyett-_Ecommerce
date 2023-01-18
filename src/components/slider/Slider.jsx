@@ -4,7 +4,6 @@ import HeadingTitle from '../heading-title/HeadingTitle'
 import Rating from '../rating/Rating';
 
 function Carrousel({data,isLaptop}) {
-    // console.log(isLaptop);
 
     const carrouselRef = useRef()
 

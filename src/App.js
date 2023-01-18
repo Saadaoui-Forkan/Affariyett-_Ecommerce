@@ -6,6 +6,7 @@ import Header from './components/header/Header'
 import SpecialOffers from './special-offers/SpecialOffers';
 import Carrousel from './components/slider/Slider';
 import { products } from './data/products'
+import Brands from './components/brands/Brands';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       <SpecialOffers />
       <Carrousel data = {laptops} isLaptop = {true}/>
       <Carrousel data = {mobiles} isLaptop = {false}/>
+      <Brands />
     </div>
   );
 }
