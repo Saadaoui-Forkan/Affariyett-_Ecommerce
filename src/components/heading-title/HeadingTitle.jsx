@@ -1,8 +1,7 @@
 import React from 'react'
-// import Arrows from './Arrows'
 import './HeadingTitle.css'
 
-function HeadingTitle ({title,text,arrowContainer}) {
+function HeadingTitle ({title,text,arrowContainer,handlePrevClick,handleNextClick}) {
   return (
     <div className='heading-title'>
         <div className="title">
@@ -12,10 +11,14 @@ function HeadingTitle ({title,text,arrowContainer}) {
             {
                 arrowContainer ? (
                     <div className="arrows">
-                        <div className="arrow-left">
+                        <div className="arrow-left"
+                            onClick={ handlePrevClick }
+                        >
                             <i className="bi bi-caret-left-fill"></i>
                         </div>
-                        <div className="arrow-right">
+                        <div className="arrow-right"
+                            onClick={handleNextClick}
+                        >
                             <i className="bi bi-caret-right-fill"></i>
                         </div> 
                     </div>

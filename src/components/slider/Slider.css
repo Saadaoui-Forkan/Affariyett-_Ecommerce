@@ -1,0 +1,26 @@
+.slider-wrapper {
+    display: flex;
+    overflow: hidden;
+    margin: 20px 25px;
+    background: var(--main-color);
+    scroll-behavior: smooth;
+}
+.slide {
+    width: 220px;
+    margin: 10px 15px;
+    border: 1px solid var(--primary-color);
+}
+.slide-image {
+    object-fit: contain;
+    width: 217px;
+}
+.slide-title {
+    font-family: 'Roboto';
+    font-weight: bold;
+    margin: 10px;
+}
+.slide-price {
+    margin: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}

@@ -18,7 +18,7 @@ function Categories() {
         <HeadingTitle 
             title = "CATEGORIES"
             text = "Some Of Our Exclusive Collection, You May Like"
-            arrowContainer = {true}
+            arrowContainer = {false}
         />
         <motion.div className='carousel' 
             ref = { carouselRef }
