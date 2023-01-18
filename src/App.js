@@ -7,6 +7,7 @@ import SpecialOffers from './special-offers/SpecialOffers';
 import Carrousel from './components/slider/Slider';
 import { products } from './data/products'
 import Brands from './components/brands/Brands';
+import Footer from './components/footer/Footer'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
       <Carrousel data = {laptops} isLaptop = {true}/>
       <Carrousel data = {mobiles} isLaptop = {false}/>
       <Brands />
+      <Footer/>
     </div>
   );
 }
