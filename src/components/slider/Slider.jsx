@@ -2,6 +2,7 @@ import React,{ useRef } from 'react'
 import './Slider.css'
 import HeadingTitle from '../heading-title/HeadingTitle'
 import Rating from '../rating/Rating';
+import { Link } from 'react-router-dom';
 
 function Carrousel({data,isLaptop}) {
 
@@ -43,7 +44,7 @@ function Carrousel({data,isLaptop}) {
 
         <div className="slider-wrapper" ref={carrouselRef}>
             {data.map((item) => (
-            <div  className="slide" 
+            <Link to={`/singleProduct/${item.id}`}  className="slide" 
                 key={item.id} 
             >
                 <img className="slide-image" src={item.image} alt={item.title} />
@@ -55,7 +56,7 @@ function Carrousel({data,isLaptop}) {
                 />
 
                 <div className="slide-price">${item.price}</div>
-            </div>
+            </Link>
             ))}
         </div>
 

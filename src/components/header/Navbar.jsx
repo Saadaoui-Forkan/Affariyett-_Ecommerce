@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Navbar({ animateNav,nav,icon,toggleIcon }) {
     
@@ -21,12 +22,12 @@ function Navbar({ animateNav,nav,icon,toggleIcon }) {
         </div>
 
         <ul className = {nav}>
-            <li className="navbar-link">
+            <Link to='/' className="navbar-link">
                 Home
-            </li>
-            <li className="navbar-link">
+            </Link>
+            <Link to='/products' className="navbar-link">
                 Electronics and mobiles
-            </li>
+            </Link>
             <li className="navbar-link">
                 Home and kitchen
             </li>

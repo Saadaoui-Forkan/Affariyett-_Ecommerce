@@ -1,14 +1,11 @@
 import React from 'react'
 import Offer from './Offer'
-import HeadingTitle from '../components/heading-title/HeadingTitle'
+import HeadingTitle from '../heading-title/HeadingTitle'
 import './SpecialOffers.css'
-import { specialOffers } from '../data/special-offers'
+import { specialOffers } from '../../data/special-offers'
 
 function SpecialOffers() {
 
-    console.log('====================================');
-    // console.log(specialOffers);
-    console.log('====================================');
   return (
     <div className='special-offers'>
         <HeadingTitle 

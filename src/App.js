@@ -1,30 +1,29 @@
 // import Slider from 'react-slick';
 import './App.css';
-import Banner from './components/banner/Banner';
-import Categories from './components/category/Categories';
 import Header from './components/header/Header'
-import SpecialOffers from './special-offers/SpecialOffers';
-import Carrousel from './components/slider/Slider';
-import { products } from './data/products'
-import Brands from './components/brands/Brands';
 import Footer from './components/footer/Footer'
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import HomePage from './pages/home/HomePage';
+import CartPage from './pages/cart/CartPage'
+import ProductsPage from './pages/products/ProductsPage'
+import SingleProductPage from './pages/singleProduct/SingleProductPage'
+import SpecialOfferPage from './pages/specialOffer/SpecialOfferPage'
 
 function App() {
 
-  const laptops = products.filter(item  => item.isLaptop === true)
-  const mobiles = products.filter(item  => item.isLaptop === false)
 
   return (
-    <div className="App">
+    <BrowserRouter>
       <Header />
-      <Banner />
-      <Categories />
-      <SpecialOffers />
-      <Carrousel data = {laptops} isLaptop = {true}/>
-      <Carrousel data = {mobiles} isLaptop = {false}/>
-      <Brands />
+      <Routes>
+        <Route path='/' element = {<HomePage/>} />
+        <Route path='/cart' element = {<CartPage />} />
+        <Route path='/products' element = {<ProductsPage/>} />
+        <Route path='/singleProduct:param' element = {<SingleProductPage />} />
+        <Route path='/specialOffer:param' element = {<SpecialOfferPage />} />
+      </Routes>
       <Footer/>
-    </div>
+    </BrowserRouter>
   );
 }
 

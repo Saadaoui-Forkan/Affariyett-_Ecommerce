@@ -91,6 +91,7 @@
     font-weight: bold;
     font-family: 'Sofia Sans Extra Condensed', sans-serif;
     cursor: pointer;
+    color: var(--gray-color);
 }
 .navbar-link:hover {
     color: var(--warning-color);

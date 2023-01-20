@@ -1,13 +1,14 @@
 import React from 'react'
-import logo from './logo.png'
+import logo from './logo.png' 
+import { Link } from 'react-router-dom'
 
 function HeaderTop({ handleShowSearchInput,form }) {
   return (
     <div className='header-top'>
-      <div className="logo-container">
+      <Link to='/' className="logo-container">
         <img src={logo} alt="logo" className='logo-img' />
         <p className="logo">Affariyett</p>
-      </div>
+      </Link>
       <div className="form-container">
         <form className={form}>
             <input type="text" name="" className='search-input' placeholder='Search Here ...' />
@@ -18,10 +19,10 @@ function HeaderTop({ handleShowSearchInput,form }) {
         </div>
       </div>
       <div className="icons">
-        <div className="cart-btn">
+        <Link to='/cart' className="cart-btn">
             <i className="bi bi-cart3"></i>
             <div className="qty"> 0 </div>  
-        </div>
+        </Link>
         <div className="cart-btn">
             <i className="bi bi-person-fill"></i>
             Sign In

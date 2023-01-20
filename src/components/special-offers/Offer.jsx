@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
-import Rating from '../components/rating/Rating';
+import Rating from '../rating/Rating';
+import { Link } from 'react-router-dom';
 
 function Offer({offer}) {
 
-  const { firstImage, secondImage, title, price, rating, discount,reviews, id } = offer;
+  const { firstImage, secondImage, title, price, rating, discount,reviews,id } = offer;
   const calculatedDiscount = price - (discount * price) / 100;
   const [imgSrc, setImgSrc] = useState(firstImage)
 
@@ -27,9 +28,9 @@ function Offer({offer}) {
             ${calculatedDiscount}
           </b>
         </div>
-         <a href='/'  className="offer-see-more">
+         <Link to={`/specialOffer/${id}`} href='/'  className="offer-see-more">
           See More ...
-         </a>
+         </Link>
       </div>
       <div className="offer-discount"> discount {discount}% </div>
     </div>
