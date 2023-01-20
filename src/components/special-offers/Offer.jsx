@@ -28,7 +28,7 @@ function Offer({offer}) {
             ${calculatedDiscount}
           </b>
         </div>
-         <Link to={`/specialOffer/${id}`} href='/'  className="offer-see-more">
+         <Link to={`/specialOffer/${id}`} className="offer-see-more">
           See More ...
          </Link>
       </div>

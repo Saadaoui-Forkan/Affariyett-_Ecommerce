@@ -41,3 +41,26 @@
     font-size: 17px;
     font-family: 'Lobster';
 }
+
+/* Media Query */
+@media (max-width:992px) {
+    .footer-top-email {
+        font-size: 15px;
+    }
+    .footer-top-title {
+        font-size: 15px;
+    }
+}
+@media (min-width:320px) and (max-width:575px) {
+    .footer-top {
+        padding: 5px;
+        color: var(--primary-color);
+    }
+    .footer-top-title {
+        font-size: 13px;
+        width: 50%;
+    }
+    .footer-top-email {  
+        font-size: 13px;
+    }
+}
