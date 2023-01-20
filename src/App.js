@@ -19,7 +19,7 @@ function App() {
         <Route path='/' element = {<HomePage/>} />
         <Route path='/cart' element = {<CartPage />} />
         <Route path='/products' element = {<ProductsPage/>} />
-        <Route path='/singleProduct/:param' element = {<SingleProductPage />} />
+        <Route path='/singleProduct/:id' element = {<SingleProductPage />} />
         <Route path='/specialOffer/:param' element = {<SpecialOfferPage />} />
       </Routes>
       <Footer/>
