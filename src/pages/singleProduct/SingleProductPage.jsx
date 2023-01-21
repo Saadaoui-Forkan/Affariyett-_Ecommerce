@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import Rating from '../../components/rating/Rating'
 import { products } from '../../data/products'
-
+import './SingleProduct.css'
 function SingleProductPage() {
 
   const {id} = useParams()
@@ -31,7 +31,23 @@ function SingleProductPage() {
           </div>
         </div>
       </div>
-      {/* <ProductDescription /> */}
+      <div className="product-description">
+        Lorem ipsum dolor sit, 
+        amet consectetur adipisicing elit. 
+        Explicabo optio, 
+        eveniet in maxime incidunt cumque 
+        vel laborum recusandae, 
+        deserunt earum illum neque molestiae 
+        error praesentium ipsa. Corporis amet 
+        labore voluptatibus dignissimos debitis 
+        pariatur cum deserunt id dicta iste, 
+        suscipit harum asperiores quia illo ducimus 
+        placeat dolorem fugit provident accusamus. 
+        Molestias.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Fuga, eligendi id veritatis architecto labore 
+        adipisci ducimus iusto est expedita necessitatibus.
+      </div>
     </div>
   )
 }

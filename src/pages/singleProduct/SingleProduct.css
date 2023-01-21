@@ -50,11 +50,11 @@
 }
 
 .product-add-to-cart input {
-    border: none;
     font-size: 21px;
     color: var(--primary-color);
     padding: 5px 10px;
     margin-left: 10px;
+    border: 1px solid var(--primary-color);
 }
 
 .add-to-cart-btn {
@@ -67,18 +67,12 @@
     cursor: pointer;
     padding: 5px 10px;
 }
-
 .product-description {
-    font-size: 17px;
-    line-height: 1.8;
-    color: var(--gray-color);
-    padding: 30px;
-}
-
-.product-description-title {
-    font-size: 25px;
-    color: var(--primary-color);
-    display: block;
+    width: 80%;
+    margin: 20px auto;
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 /* Media Queries */
