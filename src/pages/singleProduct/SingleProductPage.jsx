@@ -1,23 +1,40 @@
-import React from 'react'
+import React,{ useEffect,useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Rating from '../../components/rating/Rating'
-import { products } from '../../data/products'
 import './SingleProduct.css'
 function SingleProductPage() {
 
   const {id} = useParams()
-  const product = products.find(prod => prod.id === +id) // parseInt(param) === +(param)
+
+  const [product,setProduct] = useState(null)
+
+  async function fetchProductById(productId) {
+    try {
+      const response = await fetch(`http://localhost:5000/products/${productId}`)
+      const data = await response.json()
+      // console.log(data)
+      setProduct(data)
+
+    } catch (error) {
+      console.log(error)
+
+    }
+  }
+
+  useEffect(() => {
+    fetchProductById(id);
+  }, [id])
 
   return (
     <div className="single-product">
       <div className="product-wrapper">
         <div className="product-image-wrapper">
-          <img src={product.image} alt="" />
+          <img src={product?.image} alt="" />
         </div>
         <div className="product-info">
-          <h1 className="product-title">{product.title}</h1>
-          <Rating rating={product.rating} reviews={product.reviews} />
-          <div className="product-price">${product.price}</div>
+          <h1 className="product-title">{product?.title}</h1>
+          <Rating rating={product?.rating} reviews={product?.reviews} />
+          <div className="product-price">${product?.price}</div>
           <div className="product-add-to-cart">
             <div>Quantity</div>
             <input
