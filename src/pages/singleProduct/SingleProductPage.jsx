@@ -1,29 +1,20 @@
-import React,{ useEffect,useState } from 'react'
+import React,{ useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import Rating from '../../components/rating/Rating'
 import './SingleProduct.css'
+import { useDispatch,useSelector } from 'react-redux'
+import { fetchProductById } from '../../redux/apiCalls/productApiCall'
+
 function SingleProductPage() {
+
+  const dispatch = useDispatch()
+  const { product } = useSelector(state => state.product)
 
   const {id} = useParams()
 
-  const [product,setProduct] = useState(null)
-
-  async function fetchProductById(productId) {
-    try {
-      const response = await fetch(`http://localhost:5000/products/${productId}`)
-      const data = await response.json()
-      // console.log(data)
-      setProduct(data)
-
-    } catch (error) {
-      console.log(error)
-
-    }
-  }
-
   useEffect(() => {
-    fetchProductById(id);
-  }, [id])
+    dispatch(fetchProductById(id))
+  }, [id,dispatch])
 
   return (
     <div className="single-product">
