@@ -7,6 +7,7 @@ const productSlice = createSlice({
     initialState : {
         products : [],
         product : null,
+        loading : false,
     },
 
     reducers : {
@@ -15,7 +16,13 @@ const productSlice = createSlice({
         },
         setProduct (state,action) {
             state.product = action.payload
-        }
+        },
+        setLoading (state) {
+            state.loading = true;
+        },
+        clearLoading (state) {
+            state.loading = false
+        },
     }
 })
 

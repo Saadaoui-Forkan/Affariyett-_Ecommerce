@@ -4,17 +4,22 @@ import Rating from '../../components/rating/Rating'
 import './SingleProduct.css'
 import { useDispatch,useSelector } from 'react-redux'
 import { fetchProductById } from '../../redux/apiCalls/productApiCall'
+import Spinner from '../../components/spinner/Spinner'
 
 function SingleProductPage() {
 
   const dispatch = useDispatch()
-  const { product } = useSelector(state => state.product)
+  const { product,loading } = useSelector(state => state.product)
 
   const {id} = useParams()
 
   useEffect(() => {
     dispatch(fetchProductById(id))
   }, [id,dispatch])
+
+
+
+  if(loading) return <Spinner />
 
   return (
     <div className="single-product">
