@@ -1,8 +1,10 @@
 import React from 'react'
 import logo from './logo.png' 
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 function HeaderTop({ handleShowSearchInput,form }) {
+  const { cartItems } = useSelector(state => state.cart)
   return (
     <div className='header-top'>
       <Link to='/' className="logo-container">
@@ -21,7 +23,10 @@ function HeaderTop({ handleShowSearchInput,form }) {
       <div className="icons">
         <Link to='/cart' className="cart-btn">
             <i className="bi bi-cart3"></i>
-            <div className="qty"> 0 </div>  
+            {
+              cartItems.length>0 &&
+              <div className="qty"> {cartItems.length} </div>
+            }  
         </Link>
         <div className="cart-btn">
             <i className="bi bi-person-fill"></i>

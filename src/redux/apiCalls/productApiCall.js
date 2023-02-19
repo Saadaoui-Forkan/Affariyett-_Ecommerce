@@ -2,9 +2,7 @@ import { productActions } from "../slices/productSlice";
 
 // fetch products
 export function fetchProducts() {
-
     return async(dispatch) => {
-
         try {
             const response = await fetch("http://localhost:5000/products")
             const data = await response.json()
@@ -17,9 +15,7 @@ export function fetchProducts() {
 
 //   Get product by id
   export function fetchProductById(productId) {
-
     return async(dispatch) => {
-
         try {
             dispatch(productActions.setLoading())
             const response = await fetch(`http://localhost:5000/products/${productId}`)

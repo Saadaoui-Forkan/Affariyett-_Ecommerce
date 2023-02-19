@@ -1,26 +1,33 @@
-import React,{ useEffect} from 'react'
+import React,{ useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
 import Rating from '../../components/rating/Rating'
 import './SingleProduct.css'
 import { useDispatch,useSelector } from 'react-redux'
 import { fetchProductById } from '../../redux/apiCalls/productApiCall'
 import Spinner from '../../components/spinner/Spinner'
+import { cartActions } from '../../redux/slices/cartSlice'
 
 function SingleProductPage() {
 
   const dispatch = useDispatch()
   const { product,loading } = useSelector(state => state.product)
-
+  const {addToCart} = cartActions
   const {id} = useParams()
-
+  const [qty,setQty] = useState(1);
+  const addToCartHandler = () => {
+    dispatch(addToCart({
+      id: product?.id,
+      quantity: qty,
+      price:product?.price,
+      title: product?.title,
+      img: product?.image,
+    }))
+  }
   useEffect(() => {
     dispatch(fetchProductById(id))
-  }, [id,dispatch])
+  }, [id,dispatch]);
 
-
-
-  if(loading) return <Spinner />
-
+  if(loading) return <Spinner />;
   return (
     <div className="single-product">
       <div className="product-wrapper">
@@ -34,11 +41,16 @@ function SingleProductPage() {
           <div className="product-add-to-cart">
             <div>Quantity</div>
             <input
+              value={qty}
+              onChange={(e)=>setQty(e.target.value)}
               type="number"
               min="1"
               max="10"
             />
-            <button className="add-to-cart-btn">
+            <button 
+              className="add-to-cart-btn"
+              onClick={addToCartHandler}
+            >
               Add To Cart  
             </button>
           </div>

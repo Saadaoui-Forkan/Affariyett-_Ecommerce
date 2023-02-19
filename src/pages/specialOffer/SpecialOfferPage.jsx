@@ -3,16 +3,28 @@ import { useParams } from 'react-router-dom'
 import { specialOffers } from '../../data/special-offers'
 import Rating from '../../components/rating/Rating'
 import './SpecialOffer.css'
+import { useDispatch } from 'react-redux'
+import { cartActions } from '../../redux/slices/cartSlice'
 
 function SpecialOfferPage() { 
   const {param} = useParams()
   const product = specialOffers.find(prod => prod.id === +param) // parseInt(param) === +(param)
-
   const { images, title, rating, reviews, price, discount } = product;
-
+  const dispatch = useDispatch();
+  const {addToCart} = cartActions;
   const [imageIndex, setImageIndex] = useState(0);
-
+  const [qty,setQty] = useState(1);
   const calculatedDiscount = price - (discount * price) / 100;
+  // add to cart
+  const addToCartHandler = () => {
+    dispatch(addToCart({
+      id: product.id,
+      quantity: qty,
+      price:calculatedDiscount,
+      title: product.title,
+      img: product.images[0],
+    }))
+  }
 
   return (
     <>
@@ -46,8 +58,17 @@ function SpecialOfferPage() {
           </div>
           <div className="special-offers-add-to-cart">
               <div>Quantity</div>
-              <input type="number" min="1" max="10" />
-              <button className="add-to-cart-btn">Add To Cart</button>
+              <input 
+                value={qty}
+                onChange={e=>setQty(e.target.value)}
+                type="number" 
+                min="1" 
+                max="10" 
+              />
+              <button 
+                className="add-to-cart-btn"
+                onClick={addToCartHandler}
+              >Add To Cart</button>
             </div>
         </div>
       </div>

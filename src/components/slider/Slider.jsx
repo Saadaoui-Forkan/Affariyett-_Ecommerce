@@ -59,7 +59,6 @@ function Carrousel({data,isLaptop}) {
             </Link>
             ))}
         </div>
-
     </div>
   )
 }

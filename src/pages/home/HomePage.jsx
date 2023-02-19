@@ -10,7 +10,6 @@ import { fetchProducts } from '../../redux/apiCalls/productApiCall'
 function HomePage() {
   const dispatch = useDispatch();
   const { products } = useSelector(state => state.product)
-
   useEffect(() => {
     dispatch(fetchProducts())
   }, [dispatch])
