@@ -11,6 +11,18 @@ function HeaderTop({ handleShowSearchInput,form }) {
         <img src={logo} alt="logo" className='logo-img' />
         <p className="logo">Affariyett</p>
       </Link>
+      <div className="navbar-right">
+        {/* icons */}
+      <div className="icons">
+        <Link to='/cart' className="cart-btn">
+            <i className="bi bi-cart3"></i>
+            {
+              cartItems.length>0 &&
+              <div className="qty"> {cartItems.length} </div>
+            }  
+        </Link>
+      </div>
+      {/* form container */}
       <div className="form-container">
         <form className={form}>
             <input type="text" name="" className='search-input' placeholder='Search Here ...' />
@@ -20,18 +32,6 @@ function HeaderTop({ handleShowSearchInput,form }) {
           <i className="bi bi-search"></i>
         </div>
       </div>
-      <div className="icons">
-        <Link to='/cart' className="cart-btn">
-            <i className="bi bi-cart3"></i>
-            {
-              cartItems.length>0 &&
-              <div className="qty"> {cartItems.length} </div>
-            }  
-        </Link>
-        <div className="cart-btn">
-            <i className="bi bi-person-fill"></i>
-            Sign In
-        </div>
       </div>
     </div>
   )

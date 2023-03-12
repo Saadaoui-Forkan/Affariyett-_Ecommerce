@@ -11,7 +11,8 @@ function Header() {
 
   const animateNav = () => {
     nav === 'navbar-links' ? setNav('navbar-links active-navbar') : setNav('navbar-links')
-    icon === false ? setIcon(true) : setIcon(false)
+    // icon === false ? setIcon(true) : setIcon(false)
+    setIcon(!icon)
     toggleIcon === 'icon' ? setToggleIcon('icon toggle-icon') : setToggleIcon('icon')
   }
 

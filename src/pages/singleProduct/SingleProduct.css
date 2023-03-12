@@ -29,7 +29,6 @@
 .product-info {
     width: 50%;
     padding: 10px;
-    z-index: 1000;
 }
 
 .product-title {
@@ -89,6 +88,12 @@
 
     .product-info {
         width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .single-product {
+        padding-top: 80px;
     }
 }
 

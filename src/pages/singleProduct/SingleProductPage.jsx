@@ -24,6 +24,9 @@ function SingleProductPage() {
     }))
   }
   useEffect(() => {
+    window.scroll(0, 0)
+  })
+  useEffect(() => {
     dispatch(fetchProductById(id))
   }, [id,dispatch]);
 

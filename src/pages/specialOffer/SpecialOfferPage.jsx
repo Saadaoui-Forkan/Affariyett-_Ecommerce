@@ -15,6 +15,8 @@ function SpecialOfferPage() {
   const [imageIndex, setImageIndex] = useState(0);
   const [qty,setQty] = useState(1);
   const calculatedDiscount = price - (discount * price) / 100;
+  // Get the page from the top
+  window.scroll(0, 0)
   // add to cart
   const addToCartHandler = () => {
     dispatch(addToCart({
