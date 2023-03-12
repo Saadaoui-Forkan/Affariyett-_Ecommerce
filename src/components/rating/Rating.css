@@ -17,7 +17,8 @@
     font-weight: 600;
 }
 
-/* b.rating {
-    margin-right: 10px;
-    font-weight: bold;
-} */
+@media (max-width: 768px) {
+    .rating-wrapper {
+        font-size: 13px;
+    }
+}

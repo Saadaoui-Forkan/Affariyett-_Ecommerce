@@ -10,9 +10,9 @@ function Pagination({pages, currentPage, setCurrentPage}) {
     <div className="pagination">
         
         <button
-            onClick={() => setCurrentPage((prev) => prev - 1)}
+            onClick={() => setCurrentPage((prev) => prev + 1)}
             className="page next"
-            disabled={currentPage === 1}
+            disabled={currentPage === pages}
         >
             Next
         </button>
